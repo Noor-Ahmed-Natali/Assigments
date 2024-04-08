@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FE20F568-63C5-4390-93DD-C60C84D3EAC7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD7386E6-535A-4969-96AA-0586FFE2561D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "spacename/ViewModels/ForYouViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchSong()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD7386E6-535A-4969-96AA-0586FFE2561D - f7ec486008a1684c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor @Sendable () -&gt; () in spacename.ForYouViewModel.fetchSong() async -&gt; ()"
+                  moduleName = "spacename"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmed/Documents/iOS%20Projects/spacename/spacename/ViewModels/ForYouViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "DD7386E6-535A-4969-96AA-0586FFE2561D - 25e95e83e95d14b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for spacename.ForYouViewModel.fetchSong() async -&gt; ()"
+                  moduleName = "spacename"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmed/Documents/iOS%20Projects/spacename/spacename/ViewModels/ForYouViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
