@@ -26,6 +26,8 @@
 		E226F27A2BC3C8820032FB57 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2792BC3C8820032FB57 /* TopTracksView.swift */; };
 		E226F27D2BC3C8C00032FB57 /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F27C2BC3C8C00032FB57 /* SongCellView.swift */; };
 		E226F27F2BC3C9240032FB57 /* TopTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F27E2BC3C9240032FB57 /* TopTracksViewModel.swift */; };
+		E27A655A2BC3DBD6005D7A1A /* PlayerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A65592BC3DBD6005D7A1A /* PlayerIndicatorView.swift */; };
+		E27A655C2BC3E16A005D7A1A /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A655B2BC3E16A005D7A1A /* ColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E226F2792BC3C8820032FB57 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
 		E226F27C2BC3C8C00032FB57 /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
 		E226F27E2BC3C9240032FB57 /* TopTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksViewModel.swift; sourceTree = "<group>"; };
+		E27A65592BC3DBD6005D7A1A /* PlayerIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIndicatorView.swift; sourceTree = "<group>"; };
+		E27A655B2BC3E16A005D7A1A /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				E226F26B2BBE8BA10032FB57 /* APIManager.swift */,
 				E226F2732BBE94AD0032FB57 /* DataExt.swift */,
 				E226F2772BC000750032FB57 /* AudioManager.swift */,
+				E27A655B2BC3E16A005D7A1A /* ColorExt.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E226F27C2BC3C8C00032FB57 /* SongCellView.swift */,
+				E27A65592BC3DBD6005D7A1A /* PlayerIndicatorView.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				E226F2722BBE911D0032FB57 /* SongModel.swift in Sources */,
 				E226F24F2BBE7EB30032FB57 /* RootView.swift in Sources */,
 				E226F2742BBE94AD0032FB57 /* DataExt.swift in Sources */,
+				E27A655A2BC3DBD6005D7A1A /* PlayerIndicatorView.swift in Sources */,
+				E27A655C2BC3E16A005D7A1A /* ColorExt.swift in Sources */,
 				E226F27F2BC3C9240032FB57 /* TopTracksViewModel.swift in Sources */,
 				E226F26C2BBE8BA10032FB57 /* APIManager.swift in Sources */,
 				E226F2702BBE90ED0032FB57 /* ForYouViewModel.swift in Sources */,

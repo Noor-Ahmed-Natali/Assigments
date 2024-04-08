@@ -43,5 +43,5 @@ struct SongCellView: View {
 }
 
 #Preview {
-    SongCellView(song: .init())
+    SongCellView(song: .init(url: ""))
 }

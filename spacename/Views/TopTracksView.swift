@@ -40,7 +40,7 @@ struct TopTracksView: View {
                         .onTapGesture {
                             viewModel.selectedIndex = index
                             viewModel.showSheet = true
-                            audioManager.selectAudio(sound: song.url ?? "")
+                            audioManager.selectAudio(song: song)
                         }
                 }
             }

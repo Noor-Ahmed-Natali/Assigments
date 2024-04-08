@@ -10,10 +10,12 @@ import AVFoundation
 
 class AudioManager: ObservableObject {
     private var audioPlayer: AVPlayer?
+    @Published var song: SongModel? = nil
     @Published var isPlaying: Bool = false
     
-    func selectAudio(sound: String) {
-        if let url = URL(string: sound) {
+    func selectAudio(song: SongModel) {
+        self.song = song
+        if let url = URL(string: song.url) {
             self.audioPlayer = AVPlayer(url: url)
             self.playAudio()
         }

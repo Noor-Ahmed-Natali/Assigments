@@ -92,8 +92,7 @@ struct DetailsView: View {
                     } else {
                         self.selectedIndex = songList.count - 1
                     }
-                    
-                    audioManager.selectAudio(sound: song.url ?? "")
+                    audioManager.selectAudio(song: song)
                 }
             
             Spacer()
@@ -127,7 +126,7 @@ struct DetailsView: View {
                         self.selectedIndex = 0
                     }
                     
-                    audioManager.selectAudio(sound: song.url ?? "")
+                    audioManager.selectAudio(song: song)
                 }
             Spacer()
         }

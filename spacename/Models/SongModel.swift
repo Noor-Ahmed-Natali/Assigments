@@ -15,7 +15,7 @@ struct SongModel: Codable, Identifiable {
     var userCreated, dateCreated, userUpdated, dateUpdated: String?
     var name, artist, accent, cover: String?
     var topTrack: Bool?
-    var url: String?
+    var url: String
 
     enum CodingKeys: String, CodingKey {
         case id, status, sort

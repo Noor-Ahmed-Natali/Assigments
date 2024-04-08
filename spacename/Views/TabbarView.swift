@@ -18,7 +18,7 @@ struct TabbarView: View
     @StateObject var audioManager: AudioManager = .init()
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
                 ForYouView()
                     .tag(Tabs.forYou)
@@ -29,6 +29,11 @@ struct TabbarView: View
                     .environmentObject(audioManager)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
+            
+            
+            if audioManager.song != nil {
+            PlayerIndicatorView(audioManager: audioManager)
+            }
             
             HStack(alignment: .top) {
                 ForEach(Tabs.allCases, id: \.rawValue) { tab in
