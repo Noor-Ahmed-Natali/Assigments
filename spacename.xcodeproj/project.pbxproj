@@ -28,6 +28,7 @@
 		E226F27F2BC3C9240032FB57 /* TopTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F27E2BC3C9240032FB57 /* TopTracksViewModel.swift */; };
 		E27A655A2BC3DBD6005D7A1A /* PlayerIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A65592BC3DBD6005D7A1A /* PlayerIndicatorView.swift */; };
 		E27A655C2BC3E16A005D7A1A /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27A655B2BC3E16A005D7A1A /* ColorExt.swift */; };
+		E27A655F2BCAE29B005D7A1A /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = E27A655E2BCAE29B005D7A1A /* SwiftUIPager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 			files = (
 				E226F2642BBE8A760032FB57 /* Kingfisher in Frameworks */,
 				E226F2692BBE8B420032FB57 /* AlamofireDynamic in Frameworks */,
+				E27A655F2BCAE29B005D7A1A /* SwiftUIPager in Frameworks */,
 				E226F2672BBE8B420032FB57 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +177,7 @@
 				E226F2632BBE8A760032FB57 /* Kingfisher */,
 				E226F2662BBE8B420032FB57 /* Alamofire */,
 				E226F2682BBE8B420032FB57 /* AlamofireDynamic */,
+				E27A655E2BCAE29B005D7A1A /* SwiftUIPager */,
 			);
 			productName = spacename;
 			productReference = E226F2492BBE7EB30032FB57 /* spacename.app */;
@@ -207,6 +210,7 @@
 			packageReferences = (
 				E226F2622BBE8A760032FB57 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E226F2652BBE8B420032FB57 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E27A655D2BCAE29B005D7A1A /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = E226F24A2BBE7EB30032FB57 /* Products */;
 			projectDirPath = "";
@@ -471,6 +475,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		E27A655D2BCAE29B005D7A1A /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -488,6 +500,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E226F2652BBE8B420032FB57 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
+		};
+		E27A655E2BCAE29B005D7A1A /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E27A655D2BCAE29B005D7A1A /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

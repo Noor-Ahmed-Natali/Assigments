@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SongModel: Codable, Identifiable {
+struct SongModel: Codable, Identifiable, Equatable {
     var id: Int?
     var status: Status?
     var sort: Int?
@@ -31,12 +31,17 @@ struct SongModel: Codable, Identifiable {
     enum Status: String, Codable {
         case published = "published"
     }
+    
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
 
 extension SongModel {
     
     var getImageURL: URL? {
-        URL(string: "https://cs.saespace.co/assets/\(cover ?? "")")
+        let baseURL: String = "https://cms.samespace.com/assets/"
+       return URL(string: baseURL + (cover ?? ""))
     }
-    
 }

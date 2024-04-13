@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import SwiftUIPager
 
 struct DetailsView: View {
     var songList: [SongModel]
@@ -22,7 +23,7 @@ struct DetailsView: View {
         }
     }
     
-    let height: CGFloat = 300
+    let scrollViewHeight: CGFloat = 300
     var isPlaying: Bool = true
     
     var body: some View {
@@ -63,18 +64,25 @@ struct DetailsView: View {
     }
     
     var imageScrollView: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
-                ForEach(0..<songList.count, id: \.self) { index in
-                    KFImage(song.getImageURL)
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                }
+        GeometryReader { geo in
+            let index = songList.firstIndex(of: song)
+            let size = geo.size.width - 60
+            Pager(page: .withIndex(index ?? 0), data: songList) { song in
+                KFImage(song.getImageURL)
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fill)
+                    .cornerRadius(4)
             }
-            .scrollTargetLayout()
+            .preferredItemSize(CGSize(width: size, height: size))
+            .loopPages()
+            .itemSpacing(12)
+            .interactive(scale: 0.95)
+            .onPageChanged { index in
+                self.selectedIndex = index
+                audioManager.selectAudio(song: song)
+            }
         }
-        .scrollTargetBehavior(.paging)
-        .frame(height: height)
+        .frame(height: scrollViewHeight)
     }
     
     var controls: some View {
@@ -136,3 +144,34 @@ struct DetailsView: View {
 #Preview {
     DetailsView(songList: [], selectedIndex: .constant(0), audioManager: .init())
 }
+
+
+
+//ScrollViewReader { reader in
+//    ScrollView(.horizontal) {
+//        LazyHStack(spacing: 16) {
+//            ForEach(0..<Int.max, id: \.self) { index in
+//                let index = abs(index % songList.count)
+//                let selected = index == selectedIndex
+//                let song = songList[index]
+//                let imageURL = songList[index].getImageURL
+//                let size = geo.size.width - 44
+//                KFImage(imageURL)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .frame(width: size, height: size)
+//                    .id(song.id)
+//                    .clipped()
+//            }
+//            .task {
+//                reader.scrollTo(song.id)
+//            }
+//        }
+//        .scrollTargetLayout()
+//    }
+//    .frame(maxHeight: .infinity)
+//    .disabled(true)
+//    .onChange(of: song) { song in
+//        reader.scrollTo(song.id)
+//    }
+//}
