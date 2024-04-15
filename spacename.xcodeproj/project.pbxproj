@@ -20,7 +20,7 @@
 		E226F26E2BBE90850032FB57 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F26D2BBE90850032FB57 /* BaseModel.swift */; };
 		E226F2702BBE90ED0032FB57 /* ForYouViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F26F2BBE90ED0032FB57 /* ForYouViewModel.swift */; };
 		E226F2722BBE911D0032FB57 /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2712BBE911D0032FB57 /* SongModel.swift */; };
-		E226F2742BBE94AD0032FB57 /* DataExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2732BBE94AD0032FB57 /* DataExt.swift */; };
+		E226F2742BBE94AD0032FB57 /* DataExt+NumberExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2732BBE94AD0032FB57 /* DataExt+NumberExt.swift */; };
 		E226F2762BC0000E0032FB57 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2752BC0000E0032FB57 /* DetailsView.swift */; };
 		E226F2782BC000750032FB57 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2772BC000750032FB57 /* AudioManager.swift */; };
 		E226F27A2BC3C8820032FB57 /* TopTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E226F2792BC3C8820032FB57 /* TopTracksView.swift */; };
@@ -43,7 +43,7 @@
 		E226F26D2BBE90850032FB57 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		E226F26F2BBE90ED0032FB57 /* ForYouViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewModel.swift; sourceTree = "<group>"; };
 		E226F2712BBE911D0032FB57 /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
-		E226F2732BBE94AD0032FB57 /* DataExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExt.swift; sourceTree = "<group>"; };
+		E226F2732BBE94AD0032FB57 /* DataExt+NumberExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataExt+NumberExt.swift"; sourceTree = "<group>"; };
 		E226F2752BC0000E0032FB57 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		E226F2772BC000750032FB57 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		E226F2792BC3C8820032FB57 /* TopTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksView.swift; sourceTree = "<group>"; };
@@ -140,10 +140,8 @@
 		E226F26A2BBE8B820032FB57 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E226F26B2BBE8BA10032FB57 /* APIManager.swift */,
-				E226F2732BBE94AD0032FB57 /* DataExt.swift */,
-				E226F2772BC000750032FB57 /* AudioManager.swift */,
-				E27A655B2BC3E16A005D7A1A /* ColorExt.swift */,
+				E27A65612BCD05FD005D7A1A /* Managers */,
+				E27A65602BCD05F0005D7A1A /* Extensions */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -155,6 +153,24 @@
 				E27A65592BC3DBD6005D7A1A /* PlayerIndicatorView.swift */,
 			);
 			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		E27A65602BCD05F0005D7A1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E226F2732BBE94AD0032FB57 /* DataExt+NumberExt.swift */,
+				E27A655B2BC3E16A005D7A1A /* ColorExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E27A65612BCD05FD005D7A1A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E226F26B2BBE8BA10032FB57 /* APIManager.swift */,
+				E226F2772BC000750032FB57 /* AudioManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +261,7 @@
 				E226F25E2BBE7F990032FB57 /* TabbarView.swift in Sources */,
 				E226F2722BBE911D0032FB57 /* SongModel.swift in Sources */,
 				E226F24F2BBE7EB30032FB57 /* RootView.swift in Sources */,
-				E226F2742BBE94AD0032FB57 /* DataExt.swift in Sources */,
+				E226F2742BBE94AD0032FB57 /* DataExt+NumberExt.swift in Sources */,
 				E27A655A2BC3DBD6005D7A1A /* PlayerIndicatorView.swift in Sources */,
 				E27A655C2BC3E16A005D7A1A /* ColorExt.swift in Sources */,
 				E226F27F2BC3C9240032FB57 /* TopTracksViewModel.swift in Sources */,
@@ -392,8 +408,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,9 +419,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.assigment.spacename;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -420,8 +441,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,9 +452,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.assigment.spacename;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

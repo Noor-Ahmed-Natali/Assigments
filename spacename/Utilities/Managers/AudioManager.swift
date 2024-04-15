@@ -9,15 +9,18 @@ import Foundation
 import AVFoundation
 
 class AudioManager: ObservableObject {
-    private var audioPlayer: AVPlayer?
+    var audioPlayer: AVPlayer?
     @Published var song: SongModel? = nil
+//    @Published var duration: CMTime? = nil
     @Published var isPlaying: Bool = false
     
     func selectAudio(song: SongModel) {
         self.song = song
         if let url = URL(string: song.url) {
-            self.audioPlayer = AVPlayer(url: url)
-            self.playAudio()
+            let item = AVPlayerItem(url: url)
+//            self.duration = item.asset.duration
+            self.audioPlayer = AVPlayer(playerItem: item)
+            self.playAudio()	
         }
     }
     
@@ -30,5 +33,9 @@ class AudioManager: ObservableObject {
         self.audioPlayer?.pause()
         self.isPlaying = false
     }
-    
 }
+
+
+//extension CMTime {
+//    
+//}

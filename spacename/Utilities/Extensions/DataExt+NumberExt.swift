@@ -15,3 +15,14 @@ extension Data {
         return prettyPrintedString
     }
 }
+
+extension CGFloat {
+    
+    var toTime: String {
+        let min: Int = Int(self)/60
+        let sec: Int = Int(self)%60
+        
+        return String(format: "%02d:%02d", min, sec)
+    }
+    
+}

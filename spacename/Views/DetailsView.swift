@@ -13,6 +13,7 @@ struct DetailsView: View {
     var songList: [SongModel]
     @Binding var selectedIndex: Int?
     @EnvironmentObject var audioManager: AudioManager
+    @State var songDuration: CGFloat = 0
     
     var song: SongModel {
         
@@ -24,7 +25,12 @@ struct DetailsView: View {
     }
     
     let scrollViewHeight: CGFloat = 300
+    
     var isPlaying: Bool = true
+    
+    var maxDuration: CGFloat {
+        CGFloat(audioManager.audioPlayer?.currentItem?.asset.duration.seconds ?? 0)
+    }
     
     var body: some View {
         VStack(spacing: 56) {
@@ -41,18 +47,19 @@ struct DetailsView: View {
             }
             
             VStack {
-                Slider(value: .constant(1.0))
+                ProgressView(value: songDuration, total: maxDuration)
                     .progressViewStyle(.linear)
                     .tint(.white)
-                    .accentColor(.white)
+                    .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { sec in
+                        self.songDuration = audioManager.audioPlayer?.currentTime().seconds ?? 0
+                    }
                 
                 HStack {
-                    Text("0:00")
-                        .opacity(0.5)
+                    Text(songDuration.toTime)
                     Spacer()
-                    Text("0:00")
-                        .opacity(0.5)
+                    Text(maxDuration.toTime)
                 }
+                .opacity(0.5)
             }
             .padding(.horizontal, 20)
             
@@ -61,6 +68,10 @@ struct DetailsView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .foregroundStyle(.white)
+        .onChange(of: selectedIndex) { index in
+            songDuration = 0
+            audioManager.selectAudio(song: song)
+        }
     }
     
     var imageScrollView: some View {
@@ -79,7 +90,6 @@ struct DetailsView: View {
             .interactive(scale: 0.95)
             .onPageChanged { index in
                 self.selectedIndex = index
-                audioManager.selectAudio(song: song)
             }
         }
         .frame(height: scrollViewHeight)
@@ -100,7 +110,6 @@ struct DetailsView: View {
                     } else {
                         self.selectedIndex = songList.count - 1
                     }
-                    audioManager.selectAudio(song: song)
                 }
             
             Spacer()
@@ -133,12 +142,11 @@ struct DetailsView: View {
                     } else {
                         self.selectedIndex = 0
                     }
-                    
-                    audioManager.selectAudio(song: song)
                 }
             Spacer()
         }
     }
+    
 }
 
 #Preview {
